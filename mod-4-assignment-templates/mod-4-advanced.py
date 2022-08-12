@@ -7,7 +7,7 @@ This assignment covers your ability to manipulate data in Python.
 
 def relationship_status(from_member, to_member, social_graph):
     '''Relationship Status.
-    20 points.
+    15 points.
 
     Let us pretend that you are building a new app.
     Your app supports social media functionality, which means that users can have
@@ -46,7 +46,7 @@ def relationship_status(from_member, to_member, social_graph):
 
 def tic_tac_toe(board):
     '''Tic Tac Toe. 
-    25 points.
+    15 points.
 
     Tic Tac Toe is a common paper-and-pencil game. 
     Players must attempt to successfully draw a straight line of their symbol across a grid.
@@ -74,7 +74,7 @@ def tic_tac_toe(board):
 
 def eta(first_stop, second_stop, route_map):
     '''ETA. 
-    25 points.
+    20 points.
 
     A shuttle van service is tasked to travel along a predefined circlar route.
     This route is divided into several legs between stops.
@@ -83,7 +83,7 @@ def eta(first_stop, second_stop, route_map):
     This function returns how long it will take the shuttle to arrive at a stop
     after leaving another stop.
 
-    Please see "mod-4-ipa-1-sample-data.py" for sample data. The route map will
+    Please see the sample data file in this same folder for sample data. The route map will
     adhere to the same pattern. The route map may contain more legs and more stops,
     but it will always be one-way and fully enclosed.
 

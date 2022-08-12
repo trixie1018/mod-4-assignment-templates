@@ -7,7 +7,7 @@ This assignment covers your basic proficiency with Python.
 
 def savings(gross_pay, tax_rate, expenses):
     '''Savings.
-    5 points.
+    2 points.
 
     This function calculates the money remaining
         for an employee after taxes and expenses.
@@ -37,7 +37,7 @@ def savings(gross_pay, tax_rate, expenses):
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
-    5 points.
+    2 points.
 
     This function calculates how much material input will be wasted
         after running a certain number of jobs that consume
@@ -72,7 +72,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
 
 def interest(principal, rate, periods):
     '''Interest.
-    5 points.
+    3 points.
 
     This function calculates the final value of an investment after
         gaining simple interest over a number of periods.
@@ -102,7 +102,7 @@ def interest(principal, rate, periods):
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
-    5 points.
+    3 points.
 
     This function calculates the body mass index (BMI) of a person
         given their weight and height.
