@@ -105,7 +105,7 @@ def tic_tac_toe(board):
         cross.append(newboard[x][x])
         
     for x in range (len(newboard)):
-        othercross.append([item[len(lst)-1-x] for item in newboard])
+        othercross.append([item[len(newboard)-1-x] for item in newboard])
         
     for x in range (len(newboard)):
         convertcross.append(othercross[x][x])
