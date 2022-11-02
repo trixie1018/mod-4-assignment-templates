@@ -41,7 +41,15 @@ def relationship_status(from_member, to_member, social_graph):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    if to_member in social_graph[from_member]['following'] and from_member in social_graph[to_member]['following']:
+        answer='friends'
+    elif to_member in social_graph[from_member]['following']:
+        answer='follower'
+    elif from_member in social_graph[to_member]['following']:
+        answer='followed by'
+    else:
+        answer='no relationship'
+    return answer
 
 
 def tic_tac_toe(board):
@@ -70,7 +78,50 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    newboard=list(board)
+    rowsum=[]
+    columnsum=[]
+    cross=[]
+    othercross=[]
+    convertcross=[]
+    totalsum=[]
+    
+    for y in range (len(newboard)):
+        for x in range (len(newboard[y])):
+            if newboard[y][x]=='O':
+                newboard[y][x]=7
+            elif board[y][x]=='X':
+                newboard[y][x]=1
+            elif board[y][x]=='':
+                newboard[y][x]=0
+
+    for x in range (len(newboard)):
+        rowsum.append(sum(newboard[x]))   
+                
+    for x in range (len(newboard)):
+        columnsum.append(sum([item[x] for item in newboard]))
+    
+    for x in range (len(newboard)):
+        cross.append(newboard[x][x])
+        
+    for x in range (len(newboard)):
+        othercross.append([item[len(lst)-1-x] for item in newboard])
+        
+    for x in range (len(newboard)):
+        convertcross.append(othercross[x][x])
+                
+    totalsum=rowsum+columnsum
+    totalsum.append(sum(cross))
+    totalsum.append(sum(convertcross))
+    
+    if 7*len(newboard) in totalsum:
+            answer='PLAYER O WINS'
+    elif 1*len(newboard) in totalsum:
+            answer='PLAYER X WINS'
+    else:
+            answer='NO WINNER'
+            
+    return answer
 
 def eta(first_stop, second_stop, route_map):
     '''ETA. 
@@ -103,4 +154,4 @@ def eta(first_stop, second_stop, route_map):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    return route_map[first_stop,second_stop]['travel_time_mins']
