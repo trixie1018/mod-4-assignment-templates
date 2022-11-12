@@ -115,9 +115,9 @@ def tic_tac_toe(board):
     totalsum.append(sum(convertcross))
     
     if 7*len(newboard) in totalsum:
-            answer='PLAYER O WINS'
+            answer='O'
     elif 1*len(newboard) in totalsum:
-            answer='PLAYER X WINS'
+            answer='X'
     else:
             answer='NO WINNER'
             
@@ -154,4 +154,27 @@ def eta(first_stop, second_stop, route_map):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    return route_map[first_stop,second_stop]['travel_time_mins']
+    newkeys=list(route_map.keys())
+    firstkeys= [item[0]for item in newkeys]
+    secondkeys=[item[1]for item in newkeys]
+    newtime=list(route_map.values())
+    answer=[]
+    final=[]
+    
+    firstposition=firstkeys.index(first_stop)
+    secondposition=secondkeys.index(second_stop)
+        
+    for x in range(len(newtime)):
+            answer=answer+list(newtime[x].values())
+    
+    if first_stop==second_stop:
+        return sum(answer)
+    elif firstposition==secondposition:
+        return answer[firstposition]
+    elif firstposition<secondposition:
+        final=answer[firstposition:secondposition+1]
+        return sum(final)
+    elif firstposition>secondposition:
+        final=answer[firstposition:]+answer[:secondposition+1]
+        return sum(final)
+        

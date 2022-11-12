@@ -40,7 +40,9 @@ def shift_letter(letter, shift):
     if ord(letter)==32:
         return " "
     elif ord(letter)+shift >90:
-        return chr(ord(letter)+shift-26)
+        while ord(letter)+shift>90:
+            shift=shift-26
+        return chr(ord(letter)+shift)
     elif ord(letter)+shift <=90:
         return chr(ord(letter)+shift)
 
@@ -69,7 +71,9 @@ def caesar_cipher(message, shift):
         if ord(i)==32:
             shiftedstring=shiftedstring+' '
         elif ord(i)+shift>90:
-            shiftedstring=shiftedstring+chr(ord(i)+shift-26)
+            while ord(i)+shift>90:
+                shift=shift-26
+            shiftedstring=shiftedstring+chr(ord(i)+shift)
         elif ord(i)+shift<=90:
             shiftedstring=shiftedstring+chr(ord(i)+shift)
         
