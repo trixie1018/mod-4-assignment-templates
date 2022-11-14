@@ -67,13 +67,15 @@ def caesar_cipher(message, shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     shiftedstring=''
+    value=shift
+    
     for i in message:
         if ord(i)==32:
             shiftedstring=shiftedstring+' '
         elif ord(i)+shift>90:
-            while ord(i)+shift>90:
-                shift=shift-26
-            shiftedstring=shiftedstring+chr(ord(i)+shift)
+            while ord(i)+value>90:
+                value=value-26
+            shiftedstring=shiftedstring+chr(ord(i)+value)
         elif ord(i)+shift<=90:
             shiftedstring=shiftedstring+chr(ord(i)+shift)
         
